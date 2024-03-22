@@ -1,0 +1,18 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.navbar {
+    width: 20%;
+    height: 100%;
+    background-color: #333; /* Sample color */
+    float: left;
+}
+.body-content {
+    height: 100%;
+    overflow: auto;
+    /* Assuming you want the body content to take the remaining 80% width */
+    width: 80%;
+    float: left;
+}

@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-21 11:14:15.146876",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "channel_name",
+  "channel_description",
+  "type",
+  "section_break_evg4",
+  "is_direct_message",
+  "column_break_puci",
+  "is_self_message",
+  "column_break_ubts",
+  "is_archived"
+ ],
+ "fields": [
+  {
+   "fieldname": "channel_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Channel Name",
+   "read_only_depends_on": "eval: doc.is_direct_message || doc.is_self_message",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "channel_description",
+   "fieldtype": "Data",
+   "label": "Channel Description"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type",
+   "options": "Private\nPublic\nOpen",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_evg4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_direct_message",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Is Direct Message",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_puci",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_self_message",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Is Self Message",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_ubts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_archived",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Is Archived"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Raven Channel Member",
+   "link_fieldname": "channel_id"
+  },
+  {
+   "link_doctype": "Raven Message",
+   "link_fieldname": "channel_id"
+  }
+ ],
+ "modified": "2024-03-21 11:14:36.412841",
+ "modified_by": "Administrator",
+ "module": "Channel",
+ "name": "Channel",
+ "naming_rule": "By script",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "type",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "channel_name"
+}
